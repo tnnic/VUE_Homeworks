@@ -1,15 +1,22 @@
 <template>
-  <main :class="isDark ? 'dark' : 'light'">
+  <main :class="props.isDark ? 'dark' : 'light'">
     <h1>Добро пожаловать!</h1>
     <p>Это главная секция вашего сайта. Здесь может быть любой контент: новости, статьи, описание сервиса и т.д.</p>
   </main>
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   name: 'TheMainSection',
-  props: ['isDark']
-}
+  props: {
+    isDark: Boolean
+  },
+  setup(props) {
+    return { props }
+  }
+})
 </script>
 
 <style scoped>

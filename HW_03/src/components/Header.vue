@@ -8,10 +8,18 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   name: 'TheHeader',
-  props: ['isDark']
-}
+  props: {
+    isDark: Boolean
+  },
+  setup(props, { emit }) {
+    // Логика компонента отсутствует, только проброс события
+    return {}
+  }
+})
 </script>
 
 <style scoped>

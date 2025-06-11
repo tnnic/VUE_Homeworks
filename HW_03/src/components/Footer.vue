@@ -1,14 +1,21 @@
 <template>
-  <footer :class="isDark ? 'dark' : 'light'">
+  <footer :class="props.isDark ? 'dark' : 'light'">
     &copy; 2024 Мой сайт. Все права защищены.
   </footer>
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   name: 'TheFooter',
-  props: ['isDark']
-}
+  props: {
+    isDark: Boolean
+  },
+  setup(props) {
+    return { props }
+  }
+})
 </script>
 
 <style scoped>
