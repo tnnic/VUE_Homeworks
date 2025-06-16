@@ -1,7 +1,7 @@
 <template>
   <header>
     <span class="site-title">Мой сайт</span>
-    <button @click="toggleTheme">
+    <button @click="$emit('toggle-theme')">
       Переключить тему
     </button>
   </header>
@@ -15,11 +15,7 @@ export default defineComponent({
   props: {
     isDark: Boolean
   },
-  methods: {
-    toggleTheme() {
-      this.$emit('toggle-theme')
-    }
-  }
+  
 })
 </script>
 

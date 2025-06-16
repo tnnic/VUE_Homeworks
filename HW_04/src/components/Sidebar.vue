@@ -1,5 +1,5 @@
 <template>
-  <aside :class="isDark ? 'dark' : 'light'">
+  <aside :class="props.isDark ? 'dark' : 'light'">
     <h3>Навигация</h3>
     <ul>
       <li>Главная</li>
@@ -17,6 +17,9 @@ export default defineComponent({
   name: 'TheSidebar',
   props: {
     isDark: Boolean
+  },
+  setup(props) {
+    return { props }
   }
 })
 </script>

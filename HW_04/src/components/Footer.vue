@@ -1,5 +1,5 @@
 <template>
-  <footer :class="isDark ? 'dark' : 'light'">
+  <footer :class="props.isDark ? 'dark' : 'light'">
     &copy; 2024 Мой сайт. Все права защищены.
   </footer>
 </template>
@@ -11,6 +11,9 @@ export default defineComponent({
   name: 'TheFooter',
   props: {
     isDark: Boolean
+  },
+  setup(props) {
+    return { props }
   }
 })
 </script>

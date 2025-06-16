@@ -1,5 +1,5 @@
 <template>
-  <main :class="isDark ? 'dark' : 'light'">
+  <main :class="props.isDark ? 'dark' : 'light'">
     <h1>Добро пожаловать!</h1>
     <p>Это главная секция вашего сайта. Здесь может быть любой контент: новости, статьи, описание сервиса и т.д.</p>
   </main>
@@ -12,6 +12,9 @@ export default defineComponent({
   name: 'TheMainSection',
   props: {
     isDark: Boolean
+  },
+  setup(props) {
+    return { props }
   }
 })
 </script>
