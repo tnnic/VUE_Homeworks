@@ -8,15 +8,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'TheHeader',
   props: {
     isDark: Boolean
   },
-  
-})
+  setup(props, { emit }) {
+    function toggleTheme() {
+      emit('toggle-theme');
+    }
+    return {
+      toggleTheme,
+    };
+  },
+});
 </script>
 
 <style scoped>

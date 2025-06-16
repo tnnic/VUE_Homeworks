@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref, computed } from 'vue';
 import TheHeader from './components/Header.vue';
 import TheSidebar from './components/Sidebar.vue';
 import TheMainSection from './components/MainSection.vue';
@@ -19,20 +19,17 @@ import TheFooter from './components/Footer.vue';
 export default defineComponent({
   name: 'App',
   components: { TheHeader, TheSidebar, TheMainSection, TheFooter },
-  data() {
+  setup() {
+    const isDark = ref(false);
+    const themeClass = computed(() => (isDark.value ? 'dark' : 'light'));
+    function toggleTheme() {
+      isDark.value = !isDark.value;
+    }
     return {
-      isDark: false,
+      isDark,
+      themeClass,
+      toggleTheme,
     };
-  },
-  computed: {
-    themeClass() {
-      return this.isDark ? 'dark' : 'light';
-    },
-  },
-  methods: {
-    toggleTheme() {
-      this.isDark = !this.isDark;
-    },
   },
 });
 </script>
