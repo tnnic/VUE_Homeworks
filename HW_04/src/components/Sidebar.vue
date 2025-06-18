@@ -1,3 +1,11 @@
+<script setup lang="ts">
+interface Props {
+  isDark: boolean;
+}
+const props = defineProps<Props>();
+defineOptions({ name: 'TheSidebar' });
+</script>
+
 <template>
   <aside :class="props.isDark ? 'dark' : 'light'">
     <h3>Навигация</h3>
@@ -9,20 +17,6 @@
     </ul>
   </aside>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'TheSidebar',
-  props: {
-    isDark: Boolean
-  },
-  setup(props) {
-    return { props }
-  }
-})
-</script>
 
 <style scoped>
 aside { width: 200px; padding: 20px; height: 600px;}

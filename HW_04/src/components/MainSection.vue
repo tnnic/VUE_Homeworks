@@ -5,18 +5,11 @@
   </main>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'TheMainSection',
-  props: {
-    isDark: Boolean
-  },
-  setup(props) {
-    return { props }
-  }
-})
+<script setup lang="ts">
+interface Props {
+  isDark: boolean;
+}
+const props = defineProps<Props>();
 </script>
 
 <style scoped>

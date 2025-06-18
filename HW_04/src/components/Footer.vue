@@ -4,18 +4,12 @@
   </footer>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'TheFooter',
-  props: {
-    isDark: Boolean
-  },
-  setup(props) {
-    return { props }
-  }
-})
+<script setup lang="ts">
+interface Props {
+  isDark: boolean;
+}
+const props = defineProps<Props>();
+defineOptions({ name: 'TheFooter' });
 </script>
 
 <style scoped>

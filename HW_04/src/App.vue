@@ -9,29 +9,20 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref, computed } from 'vue';
+<script setup lang="ts">
 import TheHeader from './components/Header.vue';
 import TheSidebar from './components/Sidebar.vue';
 import TheMainSection from './components/MainSection.vue';
 import TheFooter from './components/Footer.vue';
+import { ref, computed } from 'vue';
 
-export default defineComponent({
-  name: 'App',
-  components: { TheHeader, TheSidebar, TheMainSection, TheFooter },
-  setup() {
-    const isDark = ref(false);
-    const themeClass = computed(() => (isDark.value ? 'dark' : 'light'));
-    function toggleTheme() {
-      isDark.value = !isDark.value;
-    }
-    return {
-      isDark,
-      themeClass,
-      toggleTheme,
-    };
-  },
-});
+defineOptions({ name: 'App' });
+
+const isDark = ref(false);
+const themeClass = computed(() => (isDark.value ? 'dark' : 'light'));
+function toggleTheme() {
+  isDark.value = !isDark.value;
+}
 </script>
 
 <style>
